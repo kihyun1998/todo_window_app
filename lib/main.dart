@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Text("Hello House Of Tomorrow"),
+          child: Text("ToDo Window App"),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_window_app/resource/fontType.dart';
+import 'package:todo_window_app/style/resource/fontType.dart';
 
 part 'app_color.dart';
 part 'app_deco.dart';

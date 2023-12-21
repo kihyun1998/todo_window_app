@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_window_app/src/service/riverpod_theme.dart';
+
+import 'package:todo_window_app/src/service/theme_riverpod.dart';
+import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({
@@ -14,7 +16,7 @@ class HomePage extends ConsumerWidget {
         child: TextButton(
           onPressed: ref.watch(themeProvider.notifier).toggleTheme,
           child: Text(
-            "ToDo Window App",
+            S.current.theme,
             style: ref.font.headline6,
           ),
         ),

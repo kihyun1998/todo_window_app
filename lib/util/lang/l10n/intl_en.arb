@@ -1,0 +1,12 @@
+{
+    "@@locale" : "en",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "language": "Language",
+    "en": "English",
+    "ko": "Korean",
+    "description": "Description",
+    "delete": "Delete",
+    "cancel": "Cancel"
+}

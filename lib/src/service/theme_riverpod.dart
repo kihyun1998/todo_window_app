@@ -6,9 +6,9 @@ import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/light_theme.dart';
 
 final themeProvider =
-    NotifierProvider<RiverpodTheme, AppTheme>(RiverpodTheme.new);
+    NotifierProvider<ThemeRiverpod, AppTheme>(ThemeRiverpod.new);
 
-class RiverpodTheme extends Notifier<AppTheme> {
+class ThemeRiverpod extends Notifier<AppTheme> {
   @override
   AppTheme build() {
     return LightTheme();

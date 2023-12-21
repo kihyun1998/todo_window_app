@@ -11,13 +11,13 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: ref.watch(themeProvider).color.surface,
+      backgroundColor: ref.color.surface,
       body: Center(
         child: TextButton(
           onPressed: ref.watch(themeProvider.notifier).toggleTheme,
           child: Text(
             "ToDo Window App",
-            style: ref.watch(themeProvider).font.headline6,
+            style: ref.font.headline6,
           ),
         ),
       ),

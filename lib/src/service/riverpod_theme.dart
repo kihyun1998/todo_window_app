@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:todo_window_app/style/dart_theme.dart';
@@ -21,4 +22,11 @@ class RiverpodTheme extends Notifier<AppTheme> {
       state = LightTheme();
     }
   }
+}
+
+extension ThemeServiceExt on WidgetRef {
+  AppTheme get theme => watch(themeProvider);
+  AppColor get color => theme.color;
+  AppDeco get deco => theme.deco;
+  AppFontType get font => theme.font;
 }

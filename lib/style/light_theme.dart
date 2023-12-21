@@ -5,7 +5,7 @@ import 'package:todo_window_app/style/resource/palette.dart';
 
 class LightTheme implements AppTheme {
   @override
-  Brightness brightness = Brightness.dark;
+  Brightness brightness = Brightness.light;
 
   @override
   AppColor color = AppColor(

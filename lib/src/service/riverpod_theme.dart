@@ -1,6 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:todo_window_app/style/dart_theme.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/light_theme.dart';
@@ -10,15 +10,15 @@ final themeProvider =
 
 class RiverpodTheme extends Notifier<AppTheme> {
   @override
-  build() {
+  AppTheme build() {
     return LightTheme();
   }
 
-  void toggleTheme(AppTheme theme) {
-    if (theme.brightness == Brightness.light) {
-      theme = DarkTheme();
+  void toggleTheme() {
+    if (state.brightness == Brightness.light) {
+      state = DarkTheme();
     } else {
-      theme = LightTheme();
+      state = LightTheme();
     }
   }
 }

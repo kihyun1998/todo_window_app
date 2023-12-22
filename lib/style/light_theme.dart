@@ -10,6 +10,7 @@ class LightTheme implements AppTheme {
   @override
   AppColor color = AppColor(
     surface: Palette.grey100,
+    navRailBackground: Palette.grey200,
     background: Palette.black.withOpacity(0.55),
     text: Palette.black,
     subtext: Palette.grey700,
@@ -21,7 +22,7 @@ class LightTheme implements AppTheme {
     inactive: Palette.grey400,
     inactiveContainer: Palette.grey250,
     onInactiveContainer: Palette.white,
-    primary: Palette.blue,
+    primary: Palette.navy,
     onPrimary: Palette.white,
     secondary: Palette.red,
     onSecondary: Palette.white,

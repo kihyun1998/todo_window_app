@@ -23,51 +23,49 @@ class _HomePageState extends State<HomePage> {
       builder: (BuildContext context, WidgetRef ref, Widget? child) => Scaffold(
         appBar: AppBar(
           leading: Button(
-            width: 24,
+            width: 40,
             icon: 'menu',
             type: ButtonType.flat,
             size: ButtonSize.small,
             onPressed: () {},
           ),
           title: Text(S.current.todolist),
-          actions: [
-            Button(
-              icon: 'setting',
-              type: ButtonType.flat,
-              size: ButtonSize.small,
-              onPressed: () {},
-            )
-          ],
         ),
         // drawer: const Drawer(),
-        body: Row(
-          children: [
-            NavigationRail(
-              selectedIndex: index,
-              onDestinationSelected: (index) => setState(() {
-                this.index = index;
-              }),
-              destinations: const [
-                NavigationRailDestination(
-                  icon: Icon(Icons.home),
-                  label: Text("home"),
+        body: Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+          child: Row(
+            children: [
+              NavigationRail(
+                selectedIndex: index,
+                onDestinationSelected: (index) => setState(() {
+                  this.index = index;
+                }),
+                destinations: const [
+                  NavigationRailDestination(
+                    icon: Icon(Icons.home),
+                    label: Text("home"),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.settings),
+                    label: Text("setting"),
+                  ),
+                ],
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                NavigationRailDestination(
-                  icon: Icon(Icons.settings),
-                  label: Text("setting"),
-                ),
-              ],
-            ),
-            Center(
-              child: TextButton(
-                onPressed: ref.watch(themeProvider.notifier).toggleTheme,
-                child: Text(
-                  S.current.theme,
-                  style: ref.font.headline6,
+                child: TextButton(
+                  onPressed: ref.watch(themeProvider.notifier).toggleTheme,
+                  child: Text(
+                    S.current.theme,
+                    style: ref.font.headline6,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

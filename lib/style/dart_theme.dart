@@ -10,6 +10,7 @@ class DarkTheme implements AppTheme {
   @override
   AppColor color = AppColor(
     surface: Palette.grey800,
+    navRailBackground: Palette.grey850,
     background: Palette.black.withOpacity(0.55),
     text: Palette.grey100,
     subtext: Palette.grey500,
@@ -21,7 +22,7 @@ class DarkTheme implements AppTheme {
     inactive: Palette.grey500,
     inactiveContainer: Palette.grey700,
     onInactiveContainer: Palette.grey400,
-    primary: Palette.blue,
+    primary: Palette.navy,
     onPrimary: Palette.white,
     secondary: Palette.red,
     onSecondary: Palette.white,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_window_app/src/screens/home_screen.dart';
+import 'package:todo_window_app/src/pages/home_page.dart';
 import 'package:todo_window_app/src/service/lang_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';

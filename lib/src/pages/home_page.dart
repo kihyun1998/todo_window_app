@@ -5,10 +5,17 @@ import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
   });
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +40,34 @@ class HomePage extends StatelessWidget {
           ],
         ),
         // drawer: const Drawer(),
-        body: Center(
-          child: TextButton(
-            onPressed: ref.watch(themeProvider.notifier).toggleTheme,
-            child: Text(
-              S.current.theme,
-              style: ref.font.headline6,
+        body: Row(
+          children: [
+            NavigationRail(
+              selectedIndex: index,
+              onDestinationSelected: (index) => setState(() {
+                this.index = index;
+              }),
+              destinations: const [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text("home"),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.settings),
+                  label: Text("setting"),
+                ),
+              ],
             ),
-          ),
+            Center(
+              child: TextButton(
+                onPressed: ref.watch(themeProvider.notifier).toggleTheme,
+                child: Text(
+                  S.current.theme,
+                  style: ref.font.headline6,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

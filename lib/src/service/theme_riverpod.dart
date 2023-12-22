@@ -32,7 +32,7 @@ extension ThemeServiceExt on WidgetRef {
     return ThemeData(
       scaffoldBackgroundColor: theme.color.surface,
       appBarTheme: AppBarTheme(
-        backgroundColor: theme.color.navRailBackground,
+        backgroundColor: theme.color.surface2,
         elevation: 0,
         centerTitle: false,
         iconTheme: IconThemeData(
@@ -43,7 +43,7 @@ extension ThemeServiceExt on WidgetRef {
         ),
       ),
       navigationRailTheme: NavigationRailThemeData(
-          backgroundColor: theme.color.navRailBackground,
+          backgroundColor: theme.color.surface2,
           indicatorColor: theme.color.primary,
           selectedIconTheme: IconThemeData(
             color: theme.color.onPrimary,

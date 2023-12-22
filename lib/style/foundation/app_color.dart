@@ -2,7 +2,7 @@ part of 'app_theme.dart';
 
 class AppColor {
   const AppColor({
-    required this.navRailBackground,
+    required this.surface2,
     required this.surface,
     required this.background,
     required this.text,
@@ -26,7 +26,7 @@ class AppColor {
   /// Surface
   final Color surface;
   final Color background;
-  final Color navRailBackground;
+  final Color surface2;
 
   /// Toast
   final Color toastContainer;

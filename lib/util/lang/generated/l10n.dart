@@ -139,6 +139,16 @@ class S {
       args: [],
     );
   }
+
+  /// `To Do List`
+  String get todolist {
+    return Intl.message(
+      'To Do List',
+      name: 'todolist',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

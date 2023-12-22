@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ko": MessageLookupByLibrary.simpleMessage("한국어"),
         "language": MessageLookupByLibrary.simpleMessage("언어"),
         "light": MessageLookupByLibrary.simpleMessage("라이트"),
-        "theme": MessageLookupByLibrary.simpleMessage("테마")
+        "theme": MessageLookupByLibrary.simpleMessage("테마"),
+        "todolist": MessageLookupByLibrary.simpleMessage("투두 리스트")
       };
 }

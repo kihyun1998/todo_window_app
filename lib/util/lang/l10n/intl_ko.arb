@@ -8,5 +8,6 @@
     "ko": "한국어",
     "description": "설명",
     "delete": "삭제",
-    "cancel": "취소"
+    "cancel": "취소",
+    "todolist": "투두 리스트"
 }

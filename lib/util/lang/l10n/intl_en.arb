@@ -8,5 +8,6 @@
     "ko": "Korean",
     "description": "Description",
     "delete": "Delete",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "todolist": "To Do List"
 }

@@ -21,6 +21,21 @@ class MainNavigationBar extends ConsumerWidget {
       labelType: NavigationRailLabelType.none,
 
       /// 상단 아이콘 배열
+      leading: ref.watch(naviProvider).isExtended
+          ? Button(
+              iconSize: 20,
+              icon: 'close-menu',
+              type: ButtonType.flat,
+              size: ButtonSize.small,
+              onPressed: ref.read(naviProvider.notifier).toggleExtended,
+            )
+          : Button(
+              iconSize: 20,
+              icon: 'open-menu',
+              type: ButtonType.flat,
+              size: ButtonSize.small,
+              onPressed: ref.read(naviProvider.notifier).toggleExtended,
+            ),
 
       /// 네비게이션 아이콘 배열
       destinations: const [

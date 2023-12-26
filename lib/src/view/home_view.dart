@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_window_app/src/service/navigation_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/src/view/widget/mainNavigationBar.dart';
-import 'package:todo_window_app/style/component/button/button.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,13 +21,6 @@ class _HomePageState extends State<HomePage> {
     return Consumer(
       builder: (BuildContext context, WidgetRef ref, Widget? child) => Scaffold(
         appBar: AppBar(
-          leading: Button(
-            width: 22,
-            icon: 'menu',
-            type: ButtonType.flat,
-            size: ButtonSize.small,
-            onPressed: ref.read(naviProvider.notifier).toggleExtended,
-          ),
           title: Text(S.current.todolist),
         ),
         // drawer: const Drawer(),

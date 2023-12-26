@@ -19,12 +19,19 @@ class MainWidget extends ConsumerWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           color: ref.color.surface,
+          // borderRadius: const BorderRadius.only(
+          //   topLeft: Radius.circular(30),
+          //   bottomLeft: Radius.circular(30),
+          // ),
           borderRadius: BorderRadius.circular(30.0),
         ),
         margin: const EdgeInsets.all(20),
 
         /// 실제 보여줄 위젯
-        child: child,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: child,
+        ),
       ),
     );
   }

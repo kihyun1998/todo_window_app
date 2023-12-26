@@ -10,32 +10,22 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<SettingTile> globalConfigList = [
-      SettingTile(
-        icon: 'theme',
-        title: "Theme",
-        subtitle: "Theme",
-        onPressed: () {},
-      ),
-      SettingTile(
-        icon: 'theme',
-        title: "Theme",
-        subtitle: "Theme",
-        onPressed: () {},
-      ),
-    ];
     return Scaffold(
       appBar: AppBar(title: Text(S.current.setting)),
       body: BodyWidget(
-        navigationBar: const SettingNavigationBar(),
+        navigationBar: const SettingNavigationBar(), //커스텀 세팅 네비게이션 바
         mainPage: MainWidget(
-          child: ListView.builder(
-            itemCount: globalConfigList.length,
-            itemBuilder: (context, index) {
-              return globalConfigList[index];
-            },
-          ),
-        ),
+            child: ListView.builder(
+          itemCount: 30,
+          itemBuilder: (context, index) {
+            return SettingTile(
+              icon: 'theme',
+              title: 'theme',
+              subtitle: 'theme',
+              onPressed: () {},
+            );
+          },
+        )),
       ),
     );
   }

@@ -21,15 +21,15 @@ class SettingNavigationBar extends ConsumerWidget {
       /// 상단 아이콘 배열
       leading: ref.watch(naviProvider).isExtended
           ? Button(
-              iconSize: 20,
-              icon: 'close-menu',
+              iconSize: 15,
+              icon: 'close-side',
               type: ButtonType.flat,
               size: ButtonSize.small,
               onPressed: ref.read(naviProvider.notifier).toggleExtended,
             )
           : Button(
-              iconSize: 20,
-              icon: 'open-menu',
+              iconSize: 15,
+              icon: 'open-side',
               type: ButtonType.flat,
               size: ButtonSize.small,
               onPressed: ref.read(naviProvider.notifier).toggleExtended,

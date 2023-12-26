@@ -10,16 +10,17 @@ part 'button_type.dart';
 class Button extends ConsumerStatefulWidget {
   const Button({
     super.key,
-    required this.onPressed,
     this.text,
     this.icon,
     this.color,
     this.backgroundColor,
     this.borderColer,
     this.width,
+    this.iconSize,
     ButtonType? type,
     ButtonSize? size,
     bool? isInactive,
+    required this.onPressed,
   })  : type = type ?? ButtonType.fill, // 기본 타입 fill
         size = size ?? ButtonSize.medium, // 기본 사이즈 medium
         isInactive = isInactive ?? false; // 기본 비활성 여부 false
@@ -35,6 +36,7 @@ class Button extends ConsumerStatefulWidget {
   final String? icon; // 아이콘
 
   final double? width; // 폭
+  final double? iconSize; // 아이콘 사이즈
 
   final Color? color; // 버튼 색
   final Color? backgroundColor; // 버튼 배경 색
@@ -108,6 +110,7 @@ class _ButtonState extends ConsumerState<Button> {
               AssetIcon(
                 icon: widget.icon!,
                 color: color,
+                size: widget.iconSize,
               ),
 
             /// for Gap

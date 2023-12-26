@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       builder: (BuildContext context, WidgetRef ref, Widget? child) => Scaffold(
         appBar: AppBar(
           leading: Button(
-            width: 40,
+            width: 22,
             icon: 'menu',
             type: ButtonType.flat,
             size: ButtonSize.small,

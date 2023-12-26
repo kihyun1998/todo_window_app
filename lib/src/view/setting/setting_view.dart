@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_window_app/src/view/widget/settingNavigationBar.dart';
+import 'package:todo_window_app/src/view/setting/widget/settingNavigationBar.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class SettingPage extends StatelessWidget {

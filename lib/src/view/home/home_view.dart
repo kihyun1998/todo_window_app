@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
-import 'package:todo_window_app/src/view/widget/mainNavigationBar.dart';
+import 'package:todo_window_app/src/view/home/widget/mainNavigationBar.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {

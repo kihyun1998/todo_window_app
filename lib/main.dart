@@ -3,7 +3,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_window_app/src/service/lang_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
-import 'package:todo_window_app/src/view/home_view.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 import 'package:todo_window_app/util/route_path.dart';
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
           MaterialApp(
         debugShowCheckedModeBanner: false, // 화면에 디버그 줄 안나오게 하기
 
-        /// local 설정
+        /// local 설정 for ios
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -34,11 +33,10 @@ class MyApp extends StatelessWidget {
         /// theme 설정
         theme: ref.themeData,
 
-        initialRoute: RoutePath.main,
+        // 초기 페이지 설정
+        initialRoute: RoutePath.home,
+        // onGenerateRoute 설정
         onGenerateRoute: RoutePath.onGenerateRoute,
-
-        /// homepage 지정
-        home: const HomePage(),
       ),
     );
   }

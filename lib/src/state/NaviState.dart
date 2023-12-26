@@ -1,16 +1,22 @@
+// ignore_for_file: file_names
+
 class NaviState {
-  const NaviState({
+  final int index;
+  final bool isExtended;
+
+  NaviState({
     int? index,
     bool? isExtended,
-  })  : _index = index ?? 0,
-        _isExtended = isExtended ?? false;
+  })  : index = index ?? 0,
+        isExtended = isExtended ?? false;
 
-  final int _index;
-  final bool _isExtended;
-
-  int get index => _index;
-
-  set index(NaviState naviState) {
-    _naviState = naviState;
+  NaviState copyWith({
+    int? index,
+    bool? isExtended,
+  }) {
+    return NaviState(
+      index: index ?? this.index,
+      isExtended: isExtended ?? this.isExtended,
+    );
   }
 }

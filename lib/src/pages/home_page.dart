@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:todo_window_app/src/service/navigation_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             icon: 'menu',
             type: ButtonType.flat,
             size: ButtonSize.small,
-            onPressed: () {},
+            onPressed: ref.read(naviProvider.notifier).toggleExtended,
           ),
           title: Text(S.current.todolist),
         ),
@@ -37,20 +37,77 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             children: [
               NavigationRail(
-                selectedIndex: index,
-                onDestinationSelected: (index) => setState(() {
-                  this.index = index;
-                }),
+                selectedIndex: ref.watch(naviProvider).index,
+                onDestinationSelected: (newIndex) {
+                  ref
+                      .read(naviProvider.notifier)
+                      .onDestinationSelected(newIndex);
+                },
+                extended: ref.watch(naviProvider).isExtended,
+                labelType: NavigationRailLabelType.none,
                 destinations: const [
                   NavigationRailDestination(
                     icon: Icon(Icons.home),
-                    label: Text("home"),
+                    label: Text("Home"),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.settings),
-                    label: Text("setting"),
+                    label: Text("Setting"),
                   ),
                 ],
+                trailing: Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 24),
+                      child: ref.watch(naviProvider).isExtended
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Button(
+                                  size: ButtonSize.small,
+                                  color: ref.theme.color.onSecondary,
+                                  backgroundColor: ref.theme.color.secondary,
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, 'setting');
+                                  },
+                                  icon: 'setting',
+                                  text: S.current.setting,
+                                ),
+                                const SizedBox(height: 10),
+                                Button(
+                                  onPressed: () {},
+                                  size: ButtonSize.small,
+                                  icon: 'logout',
+                                  text: S.current.logout,
+                                  color: ref.theme.color.onTertiary,
+                                  backgroundColor: ref.theme.color.tertiary,
+                                )
+                              ],
+                            )
+                          : Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Button(
+                                  size: ButtonSize.small,
+                                  onPressed: () {},
+                                  icon: 'setting',
+                                  color: ref.theme.color.onSecondary,
+                                  backgroundColor: ref.theme.color.secondary,
+                                ),
+                                const SizedBox(height: 10),
+                                Button(
+                                  onPressed: () {},
+                                  size: ButtonSize.small,
+                                  icon: 'logout',
+                                  color: ref.theme.color.onTertiary,
+                                  backgroundColor: ref.theme.color.tertiary,
+                                )
+                              ],
+                            ),
+                    ),
+                  ),
+                ),
               ),
               Expanded(
                 child: Container(

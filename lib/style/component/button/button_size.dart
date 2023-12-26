@@ -9,11 +9,11 @@ enum ButtonSize {
   double get padding {
     switch (this) {
       case ButtonSize.small:
-        return 16;
+        return 8;
       case ButtonSize.medium:
         return 12;
       case ButtonSize.large:
-        return 8;
+        return 16;
     }
   }
 

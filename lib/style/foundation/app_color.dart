@@ -23,6 +23,8 @@ class AppColor {
     required this.onSecondary,
     required this.tertiary,
     required this.onTertiary,
+    required this.quaternary,
+    required this.onQuaternary,
   });
 
   /// Surface
@@ -56,4 +58,6 @@ class AppColor {
   final Color onSecondary;
   final Color tertiary;
   final Color onTertiary;
+  final Color quaternary;
+  final Color onQuaternary;
 }

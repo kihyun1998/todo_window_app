@@ -9,5 +9,7 @@
     "description": "Description",
     "delete": "Delete",
     "cancel": "Cancel",
-    "todolist": "To Do List"
+    "todolist": "To Do List",
+    "setting": "Setting",
+    "logout": "Logout"
 }

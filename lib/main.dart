@@ -5,6 +5,7 @@ import 'package:todo_window_app/src/pages/home_page.dart';
 import 'package:todo_window_app/src/service/lang_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
+import 'package:todo_window_app/util/route_path.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
 
         /// theme 설정
         theme: ref.themeData,
+
+        initialRoute: RoutePath.main,
+        onGenerateRoute: RoutePath.onGenerateRoute,
 
         /// homepage 지정
         home: const HomePage(),

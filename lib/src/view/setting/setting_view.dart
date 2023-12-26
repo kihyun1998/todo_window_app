@@ -29,15 +29,11 @@ class SettingPage extends StatelessWidget {
       body: BodyWidget(
         navigationBar: const SettingNavigationBar(),
         mainPage: MainWidget(
-          child: Column(
-            children: [
-              ListView.builder(
-                itemCount: globalConfigList.length,
-                itemBuilder: (context, index) {
-                  return globalConfigList[index];
-                },
-              ),
-            ],
+          child: ListView.builder(
+            itemCount: globalConfigList.length,
+            itemBuilder: (context, index) {
+              return globalConfigList[index];
+            },
           ),
         ),
       ),

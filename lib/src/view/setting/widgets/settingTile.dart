@@ -20,40 +20,44 @@ class SettingTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Expanded(
-      child: SizedBox(
-        height: 10,
-        width: double.infinity,
-        child: GestureDetector(
-          onTap: onPressed,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              children: [
-                AssetIcon(
-                  icon: icon,
-                  size: 24,
+    return Row(
+      children: [
+        Expanded(
+          child: SizedBox(
+            height: 10,
+            width: double.infinity,
+            child: GestureDetector(
+              onTap: onPressed,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    AssetIcon(
+                      icon: icon,
+                      size: 24,
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: ref.font.headline5,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      subtitle,
+                      style: ref.font.subtitle1.copyWith(
+                        color: ref.color.primary,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                  ],
                 ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: ref.font.headline5,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  subtitle,
-                  style: ref.font.subtitle1.copyWith(
-                    color: ref.color.primary,
-                  ),
-                ),
-                const SizedBox(width: 10),
-              ],
+              ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

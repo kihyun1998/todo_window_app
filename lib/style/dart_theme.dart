@@ -28,6 +28,7 @@ class DarkTheme implements AppTheme {
     onSecondary: Palette.white,
     tertiary: Palette.yellow,
     onTertiary: Palette.white,
+    unselected: Palette.grey600,
   );
 
   @override

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:todo_window_app/style/dart_theme.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/light_theme.dart';
@@ -43,11 +42,18 @@ extension ThemeServiceExt on WidgetRef {
         ),
       ),
       navigationRailTheme: NavigationRailThemeData(
-          backgroundColor: theme.color.surface2,
-          indicatorColor: theme.color.primary,
-          selectedIconTheme: IconThemeData(
-            color: theme.color.onPrimary,
-          )),
+        backgroundColor: theme.color.surface2,
+        indicatorColor: theme.color.primary,
+        selectedIconTheme: IconThemeData(
+          color: theme.color.onPrimary,
+        ),
+        unselectedLabelTextStyle: theme.font.subtitle2.copyWith(
+          color: theme.color.unselected,
+        ),
+        selectedLabelTextStyle: theme.font.headline6.copyWith(
+          color: theme.color.text,
+        ),
+      ),
     );
   }
 }

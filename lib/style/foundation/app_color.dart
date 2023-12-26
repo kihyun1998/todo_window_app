@@ -1,20 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'app_theme.dart';
 
 class AppColor {
   const AppColor({
-    required this.surface2,
     required this.surface,
     required this.background,
-    required this.text,
-    required this.subtext,
+    required this.surface2,
     required this.toastContainer,
     required this.onToastContainer,
+    required this.text,
+    required this.subtext,
     required this.hint,
     required this.hintContainer,
     required this.onHintContainer,
     required this.inactive,
     required this.inactiveContainer,
     required this.onInactiveContainer,
+    required this.unselected,
     required this.primary,
     required this.onPrimary,
     required this.secondary,
@@ -45,6 +47,7 @@ class AppColor {
   final Color inactive;
   final Color inactiveContainer;
   final Color onInactiveContainer;
+  final Color unselected;
 
   /// Accent
   final Color primary;

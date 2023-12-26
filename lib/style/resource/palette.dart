@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 abstract class Palette {
   /// Chromatic color (유채색)
-  static Color navy = const Color.fromARGB(255, 10, 86, 173);
+  static Color blue = const Color(0xFF1C71C4);
   static Color red = const Color(0xFFFB432F);
-  static Color yellow = const Color(0xFFFEC85B);
+  static Color green = const Color(0xFF5AC463);
+  static Color secondBlue = const Color(0xFF2576C6);
 
   /// Achromatic color (무채색)
   static Color white = const Color(0xFFFFFFFF);

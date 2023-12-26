@@ -22,12 +22,14 @@ class LightTheme implements AppTheme {
     inactive: Palette.grey400,
     inactiveContainer: Palette.grey250,
     onInactiveContainer: Palette.white,
-    primary: Palette.navy,
+    primary: Palette.blue,
     onPrimary: Palette.white,
-    secondary: Palette.red,
+    secondary: Palette.grey400,
     onSecondary: Palette.white,
-    tertiary: Palette.yellow,
+    tertiary: Palette.red,
     onTertiary: Palette.white,
+    quaternary: Palette.green,
+    onQuaternary: Palette.white,
     unselected: Palette.grey600,
   );
 

@@ -5,7 +5,7 @@ abstract class Palette {
   static Color blue = const Color(0xFF1C71C4);
   static Color red = const Color(0xFFFB432F);
   static Color green = const Color(0xFF5AC463);
-  static Color secondBlue = const Color(0xFF2576C6);
+  static Color grey = const Color(0xFF707070);
 
   /// Achromatic color (무채색)
   static Color white = const Color(0xFFFFFFFF);

@@ -24,7 +24,7 @@ class DarkTheme implements AppTheme {
     onInactiveContainer: Palette.grey400,
     primary: Palette.blue,
     onPrimary: Palette.white,
-    secondary: Palette.grey500,
+    secondary: Palette.grey,
     onSecondary: Palette.white,
     tertiary: Palette.red,
     onTertiary: Palette.white,

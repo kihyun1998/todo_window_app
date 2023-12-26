@@ -29,6 +29,10 @@ extension ThemeServiceExt on WidgetRef {
   AppFontType get font => theme.font;
   ThemeData get themeData {
     return ThemeData(
+      // 주색상 설정
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: theme.color.primary,
+      ),
       scaffoldBackgroundColor: theme.color.surface,
       appBarTheme: AppBarTheme(
         backgroundColor: theme.color.surface2,
@@ -46,6 +50,9 @@ extension ThemeServiceExt on WidgetRef {
         indicatorColor: theme.color.primary,
         selectedIconTheme: IconThemeData(
           color: theme.color.onPrimary,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: theme.color.unselected,
         ),
         unselectedLabelTextStyle: theme.font.subtitle2.copyWith(
           color: theme.color.unselected,

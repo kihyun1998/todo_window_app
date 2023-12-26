@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_window_app/src/pages/home_page.dart';
-import 'package:todo_window_app/src/pages/setting_page.dart';
+import 'package:todo_window_app/src/view/home_view.dart';
+import 'package:todo_window_app/src/view/setting_view.dart';
 
 abstract class RoutePath {
   static const String main = 'main';

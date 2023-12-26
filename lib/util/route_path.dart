@@ -3,7 +3,7 @@ import 'package:todo_window_app/src/view/home_view.dart';
 import 'package:todo_window_app/src/view/setting_view.dart';
 
 abstract class RoutePath {
-  static const String main = 'main';
+  static const String home = 'home';
   static const String setting = 'setting';
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -12,7 +12,7 @@ abstract class RoutePath {
       case RoutePath.setting:
         page = const SettingPage();
         break;
-      case RoutePath.main:
+      case RoutePath.home:
         page = const HomePage();
         break;
     }

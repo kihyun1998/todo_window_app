@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_window_app/src/service/lang_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/src/view/setting/widgets/settingNavigationBar.dart';
 import 'package:todo_window_app/src/view/setting/widgets/settingTile.dart';
 import 'package:todo_window_app/src/view/widgets/bodyWidget.dart';
 import 'package:todo_window_app/src/view/widgets/mainWidget.dart';
+import 'package:todo_window_app/util/helper/intl_helper.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class SettingPage extends ConsumerWidget {
@@ -25,9 +27,11 @@ class SettingPage extends ConsumerWidget {
       ),
       SettingTile(
         icon: 'language',
-        title: 'language',
-        subtitle: 'language',
-        onPressed: () {},
+        title: 'Language',
+        subtitle: ref.watch(langProvider) == IntlHelper.en
+            ? S.current.en
+            : S.current.ko,
+        onPressed: ref.read(langProvider.notifier).toggleLanguage,
       ),
     ];
 
@@ -42,7 +46,13 @@ class SettingPage extends ConsumerWidget {
               return globalSetting[index];
             },
             separatorBuilder: (context, index) {
-              return const SizedBox(height: 10);
+              return Divider(
+                height: 20,
+                thickness: 1,
+                indent: 50,
+                endIndent: 50,
+                color: ref.theme.color.text,
+              );
             },
           ),
         ),

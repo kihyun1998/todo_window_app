@@ -11,7 +11,7 @@ class LangRiverpod extends Notifier<Locale> {
     return IntlHelper.en;
   }
 
-  void toggleLang() {
+  void toggleLanguage() {
     state = IntlHelper.isKo ? IntlHelper.en : IntlHelper.ko;
   }
 }

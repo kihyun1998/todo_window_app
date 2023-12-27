@@ -19,7 +19,7 @@ class LocaleState {
   }) {
     return LocaleState(
       locale: locale ?? this.locale,
-      language: language ?? S.current,
+      language: S.current,
     );
   }
 }

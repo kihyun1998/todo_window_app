@@ -6,7 +6,6 @@ import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/src/view/home/widgets/mainNavigationBar.dart';
 import 'package:todo_window_app/src/view/widgets/bodyWidget.dart';
 import 'package:todo_window_app/src/view/widgets/mainWidget.dart';
-import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({
@@ -24,21 +23,18 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final S language = ref.watch(intlProvider).language;
     return Consumer(
       builder: (BuildContext context, WidgetRef ref, Widget? child) => Scaffold(
         appBar: AppBar(
-          title: Text(S.current.todolist),
+          title: Text(ref.watch(intlProvider).language.todolist),
         ),
         body: BodyWidget(
-          navigationBar: MainNavigationBar(
-            language: language,
-          ),
+          navigationBar: const MainNavigationBar(),
           mainPage: MainWidget(
             child: TextButton(
               onPressed: ref.watch(themeProvider.notifier).toggleTheme,
               child: Text(
-                S.current.theme,
+                ref.watch(intlProvider).language.theme,
                 style: ref.font.headline6,
               ),
             ),

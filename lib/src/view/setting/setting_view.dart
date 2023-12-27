@@ -14,27 +14,23 @@ class SettingPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final LangRiverpod langService = ref.watch(langProvider.notifier);
-    final S s = ref.watch(intlProvider).language;
-
     /// 세팅 아이템
     final List<SettingTile> globalSetting = [
       /// 테마 설정
       SettingTile(
         icon: 'theme',
-        title: S.current.theme,
+        title: ref.watch(intlProvider).language.theme,
         subtitle: ref.watch(themeProvider).brightness == Brightness.light
-            ? S.current.light
-            : S.current.dark,
+            ? ref.watch(intlProvider).language.light
+            : ref.watch(intlProvider).language.dark,
         onPressed: ref.read(themeProvider.notifier).toggleTheme,
       ),
       SettingTile(
         icon: 'language',
-        title: S.current.language,
-        subtitle: ref.watch(intlProvider).locale == IntlHelper.en ? s.en : s.ko,
-        // subtitle: ref.watch(langProvider) == IntlHelper.en
-        // ? S.current.en
-        // : S.current.ko,
+        title: ref.watch(intlProvider).language.language,
+        subtitle: ref.watch(intlProvider).locale == IntlHelper.en
+            ? ref.watch(intlProvider).language.en
+            : ref.watch(intlProvider).language.ko,
         onPressed: ref.read(intlProvider.notifier).toggleLanguage,
       ),
     ];

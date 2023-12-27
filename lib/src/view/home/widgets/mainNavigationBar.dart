@@ -1,17 +1,15 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_window_app/src/service/intl_riverpod.dart';
 import 'package:todo_window_app/src/service/navigation_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
-import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class MainNavigationBar extends ConsumerWidget {
   const MainNavigationBar({
     super.key,
-    required this.language,
   });
-  final S language;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,11 +43,11 @@ class MainNavigationBar extends ConsumerWidget {
         /// 홈 아이콘
         NavigationRailDestination(
           icon: const Icon(Icons.home),
-          label: Text(S.current.home),
+          label: Text(ref.watch(intlProvider).language.home),
         ),
         NavigationRailDestination(
           icon: const Icon(Icons.star),
-          label: Text(S.current.favorite),
+          label: Text(ref.watch(intlProvider).language.favorite),
         ),
       ],
 
@@ -60,12 +58,14 @@ class MainNavigationBar extends ConsumerWidget {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 24),
             child: ref.watch(naviProvider).isExtended
+
+                /// isExtended가 true이면 Icon과 Text 함께 노출
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       /// 환경설정 버튼
                       Button(
-                        text: S.current.setting,
+                        text: ref.watch(intlProvider).language.setting,
                         icon: 'setting',
                         color: ref.theme.color.onSecondary,
                         backgroundColor: ref.theme.color.secondary,
@@ -80,7 +80,7 @@ class MainNavigationBar extends ConsumerWidget {
 
                       /// 로그아웃 버튼
                       Button(
-                        text: S.current.logout,
+                        text: ref.watch(intlProvider).language.logout,
                         icon: 'logout',
                         color: ref.theme.color.onTertiary,
                         backgroundColor: ref.theme.color.tertiary,

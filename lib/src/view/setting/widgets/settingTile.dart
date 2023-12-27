@@ -22,6 +22,7 @@ class SettingTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: onPressed,
+      behavior: HitTestBehavior.translucent,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(

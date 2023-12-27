@@ -8,7 +8,6 @@ import 'package:todo_window_app/src/view/widgets/bodyWidget.dart';
 import 'package:todo_window_app/src/view/widgets/mainWidget.dart';
 import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/util/helper/intl_helper.dart';
-import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class SettingPage extends ConsumerWidget {
   const SettingPage({super.key});
@@ -37,7 +36,7 @@ class SettingPage extends ConsumerWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text(S.current.setting)),
+      appBar: AppBar(title: Text(ref.watch(intlProvider).language.setting)),
       body: BodyWidget(
         navigationBar: const SettingNavigationBar(), //커스텀 세팅 네비게이션 바
         mainPage: MainWidget(

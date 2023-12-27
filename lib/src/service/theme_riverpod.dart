@@ -14,17 +14,7 @@ class ThemeRiverpod extends Notifier<AppTheme> {
 
   @override
   AppTheme build() {
-    configService.appModeFromJson().then(
-      (mode) {
-        if (mode == DarkTheme().mode) {
-          return DarkTheme();
-        } else {
-          return LightTheme();
-        }
-      },
-    ).catchError((error) {
-      return LightTheme();
-    });
+    return LightTheme();
   }
 
   void toggleTheme() {
@@ -36,8 +26,8 @@ class ThemeRiverpod extends Notifier<AppTheme> {
 
     // [ToDo]: 적용하기 버튼 누르면 저장하는 걸로 변경해야 한다.
     // 변경된 state.mode를 json으로 저장한다.
-    Map<String, dynamic> jsonMap = AppMode.toJson(state.mode);
-    configService.saveConfig(jsonMap);
+    // Map<String, dynamic> jsonMap = AppMode.toJson(state.mode);
+    // configService.saveConfig(jsonMap);
   }
 }
 

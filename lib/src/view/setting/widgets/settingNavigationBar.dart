@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_window_app/src/service/intl_riverpod.dart';
 import 'package:todo_window_app/src/service/navigation_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
@@ -11,6 +12,8 @@ class SettingNavigationBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final S s = ref.watch(intlProvider).language;
+
     return NavigationRail(
       selectedIndex: ref.watch(naviProvider).index,
       onDestinationSelected: (newIndex) {
@@ -41,11 +44,13 @@ class SettingNavigationBar extends ConsumerWidget {
         /// 홈 아이콘
         NavigationRailDestination(
           icon: const Icon(Icons.tune),
-          label: Text(S.current.basic),
+          label: Text(s.basic),
         ),
+        // label: Text(S.current.basic),
         NavigationRailDestination(
           icon: const Icon(Icons.terminal),
-          label: Text(S.current.program),
+          label: Text(s.program),
+          // label: Text(S.current.program),
         ),
       ],
     );

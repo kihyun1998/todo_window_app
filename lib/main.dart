@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_window_app/src/service/lang_riverpod.dart';
+import 'package:todo_window_app/src/service/intl_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 import 'package:todo_window_app/util/route_path.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        locale: ref.watch(langProvider),
+        locale: ref.watch(intlProvider).locale,
 
         /// theme 설정
         theme: ref.themeData,

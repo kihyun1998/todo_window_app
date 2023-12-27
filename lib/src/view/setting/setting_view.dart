@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todo_window_app/src/service/lang_riverpod.dart';
+import 'package:todo_window_app/src/service/intl_riverpod.dart';
 import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/src/view/setting/widgets/settingNavigationBar.dart';
 import 'package:todo_window_app/src/view/setting/widgets/settingTile.dart';
@@ -14,6 +14,9 @@ class SettingPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // final LangRiverpod langService = ref.watch(langProvider.notifier);
+    final S s = ref.watch(intlProvider).language;
+
     /// 세팅 아이템
     final List<SettingTile> globalSetting = [
       /// 테마 설정
@@ -28,10 +31,11 @@ class SettingPage extends ConsumerWidget {
       SettingTile(
         icon: 'language',
         title: S.current.language,
-        subtitle: ref.watch(langProvider) == IntlHelper.en
-            ? S.current.en
-            : S.current.ko,
-        onPressed: ref.read(langProvider.notifier).toggleLanguage,
+        subtitle: ref.watch(intlProvider).locale == IntlHelper.en ? s.en : s.ko,
+        // subtitle: ref.watch(langProvider) == IntlHelper.en
+        // ? S.current.en
+        // : S.current.ko,
+        onPressed: ref.read(intlProvider.notifier).toggleLanguage,
       ),
     ];
 

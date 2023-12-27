@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo_window_app/src/service/configService.dart';
 import 'package:todo_window_app/style/dart_theme.dart';
 import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
@@ -9,9 +10,21 @@ final themeProvider =
     NotifierProvider<ThemeRiverpod, AppTheme>(ThemeRiverpod.new);
 
 class ThemeRiverpod extends Notifier<AppTheme> {
+  final ConfigService configService = ConfigService();
+
   @override
   AppTheme build() {
-    return LightTheme();
+    configService.appModeFromJson().then(
+      (mode) {
+        if (mode == DarkTheme().mode) {
+          return DarkTheme();
+        } else {
+          return LightTheme();
+        }
+      },
+    ).catchError((error) {
+      return LightTheme();
+    });
   }
 
   void toggleTheme() {
@@ -20,6 +33,11 @@ class ThemeRiverpod extends Notifier<AppTheme> {
     } else {
       state = LightTheme();
     }
+
+    // [ToDo]: 적용하기 버튼 누르면 저장하는 걸로 변경해야 한다.
+    // 변경된 state.mode를 json으로 저장한다.
+    Map<String, dynamic> jsonMap = AppMode.toJson(state.mode);
+    configService.saveConfig(jsonMap);
   }
 }
 

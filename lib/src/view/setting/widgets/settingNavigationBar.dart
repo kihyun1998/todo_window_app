@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_window_app/src/service/navigation_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
+import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
 class SettingNavigationBar extends ConsumerWidget {
   const SettingNavigationBar({
@@ -36,15 +37,15 @@ class SettingNavigationBar extends ConsumerWidget {
             ),
 
       /// 네비게이션 아이콘 배열
-      destinations: const [
+      destinations: [
         /// 홈 아이콘
         NavigationRailDestination(
-          icon: Icon(Icons.public),
-          label: Text("Global"),
+          icon: const Icon(Icons.tune),
+          label: Text(S.current.basic),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.terminal),
-          label: Text("Programs"),
+          icon: const Icon(Icons.terminal),
+          label: Text(S.current.program),
         ),
       ],
     );

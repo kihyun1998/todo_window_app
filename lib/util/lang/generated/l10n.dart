@@ -169,6 +169,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Basic`
+  String get basic {
+    return Intl.message(
+      'Basic',
+      name: 'basic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Program`
+  String get program {
+    return Intl.message(
+      'Program',
+      name: 'program',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

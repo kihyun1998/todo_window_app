@@ -11,5 +11,7 @@
     "cancel": "Cancel",
     "todolist": "To Do List",
     "setting": "Setting",
-    "logout": "Logout"
+    "logout": "Logout",
+    "basic": "Basic",
+    "program": "Program"
 }

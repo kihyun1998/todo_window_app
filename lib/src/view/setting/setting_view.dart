@@ -19,7 +19,7 @@ class SettingPage extends ConsumerWidget {
       /// 테마 설정
       SettingTile(
         icon: 'theme',
-        title: 'Theme',
+        title: S.current.theme,
         subtitle: ref.watch(themeProvider).brightness == Brightness.light
             ? S.current.light
             : S.current.dark,
@@ -27,7 +27,7 @@ class SettingPage extends ConsumerWidget {
       ),
       SettingTile(
         icon: 'language',
-        title: 'Language',
+        title: S.current.language,
         subtitle: ref.watch(langProvider) == IntlHelper.en
             ? S.current.en
             : S.current.ko,

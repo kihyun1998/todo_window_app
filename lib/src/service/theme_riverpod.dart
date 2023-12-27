@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_window_app/style/dart_theme.dart';
+import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/light_theme.dart';
 
@@ -14,7 +15,7 @@ class ThemeRiverpod extends Notifier<AppTheme> {
   }
 
   void toggleTheme() {
-    if (state.brightness == Brightness.light) {
+    if (state.mode == AppMode.light) {
       state = DarkTheme();
     } else {
       state = LightTheme();

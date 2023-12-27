@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_window_app/src/service/intl_riverpod.dart';
 import 'package:todo_window_app/src/service/navigation_riverpod.dart';
+import 'package:todo_window_app/src/service/theme_riverpod.dart';
 import 'package:todo_window_app/style/component/button/button.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
@@ -25,6 +26,7 @@ class SettingNavigationBar extends ConsumerWidget {
       /// 상단 아이콘 배열
       leading: ref.watch(naviProvider).isExtended
           ? Button(
+              color: ref.theme.color.text,
               iconSize: 15,
               icon: 'close-side',
               type: ButtonType.flat,
@@ -32,6 +34,7 @@ class SettingNavigationBar extends ConsumerWidget {
               onPressed: ref.read(naviProvider.notifier).toggleExtended,
             )
           : Button(
+              color: ref.theme.color.text,
               iconSize: 15,
               icon: 'open-side',
               type: ButtonType.flat,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/resource/fontType.dart';
 import 'package:todo_window_app/style/resource/palette.dart';
 
 class LightTheme implements AppTheme {
   @override
-  Brightness brightness = Brightness.light;
+  AppMode mode = AppMode.light;
 
   @override
   AppColor color = AppColor(

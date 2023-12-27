@@ -6,6 +6,7 @@ import 'package:todo_window_app/src/view/setting/widgets/settingNavigationBar.da
 import 'package:todo_window_app/src/view/setting/widgets/settingTile.dart';
 import 'package:todo_window_app/src/view/widgets/bodyWidget.dart';
 import 'package:todo_window_app/src/view/widgets/mainWidget.dart';
+import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/util/helper/intl_helper.dart';
 import 'package:todo_window_app/util/lang/generated/l10n.dart';
 
@@ -20,7 +21,7 @@ class SettingPage extends ConsumerWidget {
       SettingTile(
         icon: 'theme',
         title: ref.watch(intlProvider).language.theme,
-        subtitle: ref.watch(themeProvider).brightness == Brightness.light
+        subtitle: ref.watch(themeProvider).mode == AppMode.light
             ? ref.watch(intlProvider).language.light
             : ref.watch(intlProvider).language.dark,
         onPressed: ref.read(themeProvider.notifier).toggleTheme,

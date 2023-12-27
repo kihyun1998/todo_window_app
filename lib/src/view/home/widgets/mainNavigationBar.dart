@@ -24,6 +24,7 @@ class MainNavigationBar extends ConsumerWidget {
       /// 상단 아이콘 배열
       leading: ref.watch(naviProvider).isExtended
           ? Button(
+              color: ref.theme.color.text,
               iconSize: 15,
               icon: 'close-side',
               type: ButtonType.flat,
@@ -31,6 +32,7 @@ class MainNavigationBar extends ConsumerWidget {
               onPressed: ref.read(naviProvider.notifier).toggleExtended,
             )
           : Button(
+              color: ref.theme.color.text,
               iconSize: 15,
               icon: 'open-side',
               type: ButtonType.flat,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:todo_window_app/style/foundation/app_mode.dart';
 import 'package:todo_window_app/style/foundation/app_theme.dart';
 import 'package:todo_window_app/style/resource/fontType.dart';
 import 'package:todo_window_app/style/resource/palette.dart';
 
 class DarkTheme implements AppTheme {
   @override
-  Brightness brightness = Brightness.dark;
+  AppMode mode = AppMode.dark;
 
   @override
   AppColor color = AppColor(

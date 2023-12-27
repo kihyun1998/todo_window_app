@@ -13,5 +13,7 @@
     "setting": "Setting",
     "logout": "Logout",
     "basic": "Basic",
-    "program": "Program"
+    "program": "Program",
+    "home": "Home",
+    "favorite": "Favorite"
 }

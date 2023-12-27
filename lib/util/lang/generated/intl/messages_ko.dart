@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "delete": MessageLookupByLibrary.simpleMessage("삭제"),
         "description": MessageLookupByLibrary.simpleMessage("설명"),
         "en": MessageLookupByLibrary.simpleMessage("영어"),
+        "favorite": MessageLookupByLibrary.simpleMessage("즐겨찾기"),
+        "home": MessageLookupByLibrary.simpleMessage("홈"),
         "ko": MessageLookupByLibrary.simpleMessage("한국어"),
         "language": MessageLookupByLibrary.simpleMessage("언어"),
         "light": MessageLookupByLibrary.simpleMessage("라이트"),

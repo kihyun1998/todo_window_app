@@ -13,5 +13,7 @@
     "setting": "환경설정",
     "logout": "로그아웃",
     "basic": "기본 설정",
-    "program": "프로그램 설정"
+    "program": "프로그램 설정",
+    "home": "홈",
+    "favorite": "즐겨찾기"
 }

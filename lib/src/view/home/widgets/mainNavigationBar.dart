@@ -38,15 +38,15 @@ class MainNavigationBar extends ConsumerWidget {
             ),
 
       /// 네비게이션 아이콘 배열
-      destinations: const [
+      destinations: [
         /// 홈 아이콘
         NavigationRailDestination(
-          icon: Icon(Icons.home),
-          label: Text("Home"),
+          icon: const Icon(Icons.home),
+          label: Text(S.current.home),
         ),
         NavigationRailDestination(
-          icon: Icon(Icons.star),
-          label: Text("Favorite"),
+          icon: const Icon(Icons.star),
+          label: Text(S.current.favorite),
         ),
       ],
 
